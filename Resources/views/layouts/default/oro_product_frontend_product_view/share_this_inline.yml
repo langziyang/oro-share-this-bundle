@@ -1,0 +1,11 @@
+layout:
+  actions:
+    - '@setBlockTheme':
+        themes: share_this_inline.html.twig
+
+    - '@add':
+        parentId: product_view_media_wrapper
+        id: share_this_inline
+        blockType: block
+
+  conditions: 'context["share_this_display_inline"]==true'

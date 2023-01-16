@@ -1,0 +1,8 @@
+jinber:
+  share_this:
+    settings:
+      transport:
+        label: 'Share this'
+
+    channel_type:
+      label: 'Share this'

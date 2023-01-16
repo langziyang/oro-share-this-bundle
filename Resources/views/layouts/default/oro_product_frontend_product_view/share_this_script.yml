@@ -1,0 +1,11 @@
+layout:
+  actions:
+    # add script link to product detail page header
+    - '@add':
+        parentId: head
+        id: share_this_script
+        blockType: script
+        options:
+          src: '=context["share_this_script"]'
+          async: async
+

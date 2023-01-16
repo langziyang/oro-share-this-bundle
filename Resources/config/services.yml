@@ -1,0 +1,38 @@
+parameters:
+  jinber.share_this.method.identifier_prefix.share_this: 'jinber_share_this'
+
+services:
+  jinber.generator.share_this_config_identifier:
+    parent: oro_integration.generator.prefixed_identifier_generator
+    public: true
+    arguments:
+      - '%jinber.share_this.method.identifier_prefix.share_this%'
+
+  #后台设置,需要提供 channel,transport和setting provider 才能生成migrations
+  jinber.share_this.integration.channel:
+    class: Jinber\Bundle\ShareThisBundle\Integration\ShareThisChannelType
+    public: true
+    tags:
+      - { name: oro_integration.channel, type: jinber_share_this }
+
+  jinber.share_this.integration.transport:
+    class: Jinber\Bundle\ShareThisBundle\Integration\ShareThisTransport
+    public: false
+    tags:
+      - { name: oro_integration.transport, type: jinber_share_this, channel_type: jinber_share_this }
+
+  jinber.share_this.provider.share_this_settings:
+    class: Jinber\Bundle\ShareThisBundle\Provider\ShareThisSettingsProvider
+    arguments:
+      - '@doctrine'
+      - '@oro_config.manager'
+
+
+
+  #为前端context提供返回数据的接口
+  jinber.share_this.layout.extension.share_this_context_configurator:
+    class: Jinber\Bundle\ShareThisBundle\Layout\Extension\ShareThisContextConfigurator
+    arguments:
+      - '@jinber.share_this.provider.share_this_settings'
+    tags:
+      - { name: layout.context_configurator }
