@@ -1,25 +1,17 @@
 {
-  "name": "jinber/oro-share-this-bundle",
-  "description": "Add share this button to your oro product detail page",
-  "type": "symfony-bundle",
-  "keywords": [
-    "sharethis",
-    "orocommerce"
-  ],
-  "minimum-stability": "stable",
-  "license": "PSL-3.0",
-  "authors": [
-    {
-      "name": "langziyang",
-      "email": "43412512@qq.com"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "Jinber\\Bundle\\ShareThisBundle\\": ""
-    }
-  },
-  "require": {
-    "oro/commerce": "^5.0.*"
-  }
+    "name": "jinber/oro-share-this",
+    "description": "Add Share this to oro product detail page",
+    "type": "symfony-bundle",
+    "autoload": {
+        "psr-4": {
+            "Jinber\\Bundle\\ShareThisBundle\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "langziyang",
+            "email": "43412512@qq.com"
+        }
+    ],
+    "require": {}
 }
