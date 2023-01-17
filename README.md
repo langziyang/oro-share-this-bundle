@@ -2,7 +2,12 @@
 ### add share this to your orocommerce product detail page
 
 # install:
-`composer install jinber/oro-share-this`
+`composer install jinber/oro-share-this-bundle`
+
+#### clean cache
+`php bin/console c:c`
+#### update database
+`php bin/console d:s:u --force`
 
 # setting:
 ![back setting image](back.png)
