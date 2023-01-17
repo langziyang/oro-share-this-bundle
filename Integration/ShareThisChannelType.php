@@ -19,6 +19,6 @@ class ShareThisChannelType implements ChannelInterface,IconAwareIntegrationInter
 
     public function getIcon()
     {
-        return '';
+        return 'bundles/sharethis/img/share.png';
     }
 }
